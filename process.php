@@ -1,7 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['register'])) {
-        echo "登録を開始しました";
         // 登録ボタンがクリックされた場合
         $name = $_POST['name'];
         $age = $_POST['age'];
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // 接続を閉じる
         $conn->close();
     } elseif (isset($_POST['search'])) {
-        echo "検索を開始しました";
         // 検索ボタンがクリックされた場合
         // RDSからデータを取得する処理を追加する
         $conn = connectToDB();
