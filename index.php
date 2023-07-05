@@ -15,8 +15,32 @@
             $name = $_POST['name'];
             $age = $_POST['age'];
 
-            // 登録成功メッセージを表示する
-            echo "登録しました";
+            // RDSに接続
+            $servername = "my-db.co7vcyxdczfg.ap-northeast-1.rds.amazonaws.com";
+            $username = "admin";
+            $password = "cloudtech";
+            $dbname = "namelist";
+
+            // RDSに接続
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // 接続エラーチェック
+            if ($conn->connect_error) {
+                die("接続に失敗しました: " . $conn->connect_error);
+            }
+
+            // データを挿入するSQLクエリ
+            $sql = "INSERT INTO users (name, age) VALUES ('$name', '$age')";
+
+            // SQLクエリを実行して結果を取得
+            if ($conn->query($sql) === true) {
+                echo "登録しました";
+            } else {
+                echo "登録に失敗しました: " . $conn->error;
+            }
+
+            // 接続を閉じる
+            $conn->close();
         } elseif (isset($_POST['search'])) {
             echo "検索を開始しました";
             // 検索ボタンがクリックされた場合
