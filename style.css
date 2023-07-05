@@ -60,3 +60,23 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+.form-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.button-row input[type="submit"] {
+    margin-left: 10px;
+}
