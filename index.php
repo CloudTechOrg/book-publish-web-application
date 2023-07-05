@@ -11,6 +11,12 @@
     <?php include 'process.php'; ?>
 
     <form method="POST" action="">
+        <div class="button-row">
+            <input type="submit" name="search" value="検索">
+        </div>
+    </form>
+
+    <form method="POST" action="">
         <div class="form-row">
             <div class="form-column">
                 <label for="name">名前:</label>
@@ -25,11 +31,7 @@
         </div>
         <div class="button-row">
             <input type="submit" name="register" value="登録">
-            <input type="submit" name="search" value="検索">
         </div>
     </form>
-
-
-
 </body>
 </html>
