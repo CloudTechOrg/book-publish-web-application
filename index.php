@@ -20,10 +20,40 @@
         } elseif (isset($_POST['search'])) {
             echo "検索を開始しました";
             // 検索ボタンがクリックされた場合
-            // 検索処理を追加する
+            // RDSからデータを取得する処理を追加する
+            $servername = "my-db.co7vcyxdczfg.ap-northeast-1.rds.amazonaws.com";
+            $username = "admin";
+            $password = "cloudtech";
+            $dbname = "namelist";
 
-            // 検索結果を表示する
-            echo "検索結果を表示します";
+            // RDSに接続
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // 接続エラーチェック
+            if ($conn->connect_error) {
+                die("接続に失敗しました: " . $conn->connect_error);
+            }
+
+            // データを取得するSQLクエリ
+            $sql = "SELECT name, age FROM users";
+
+            // SQLクエリを実行して結果を取得
+            $result = $conn->query($sql);
+
+            // テーブル形式で結果を表示
+            if ($result->num_rows > 0) {
+                echo "<table>";
+                echo "<tr><th>名前</th><th>年齢</th></tr>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr><td>".$row["name"]."</td><td>".$row["age"]."</td></tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "検索結果がありません";
+            }
+
+            // 接続を閉じる
+            $conn->close();
         }
     }
     ?>
