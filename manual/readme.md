@@ -1,7 +1,5 @@
 # 起動
 
-画面の起動
-
 Webアプリを起動すると、以下のような画面が表示されます。
 
 [![Image from Gyazo](https://i.gyazo.com/04de33be325901e95c83eb88faa9aa01.png)](https://gyazo.com/04de33be325901e95c83eb88faa9aa01)
