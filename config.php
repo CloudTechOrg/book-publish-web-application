@@ -1,6 +1,6 @@
 <?php
-    $servername = "my-db.co7vcyxdczfg.ap-northeast-1.rds.amazonaws.com";
+    $servername
     $username = "admin";
-    $password = "cloudtech";
+    $password =
     $dbname = "namelist";
 ?>
