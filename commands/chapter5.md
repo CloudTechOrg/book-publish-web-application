@@ -1,11 +1,15 @@
-# 4. Webの設定
+# 第5章 Webサーバの構築
 
-### パッケージ管理ツールのアップデート
+## 5-3 実際に作ってみよう
+
+### 4. Webの設定
+
+#### パッケージ管理ツールのアップデート
 ```shell
 sudo yum update
 ```
 
-### Webサーバのソフトウェアをインストール
+#### Webサーバのソフトウェアをインストール
 ```shell
 sudo yum install httpd
 ```
@@ -14,7 +18,7 @@ sudo yum install httpd
 httpd -v
 ```
 
-### PHPをインストール
+#### PHPをインストール
 ```shell
 sudo yum install php
 ```
@@ -23,12 +27,12 @@ sudo yum install php
 php -v
 ```
 
-### Webサーバを起動
+#### Webサーバを起動
 ```shell
 sudo service httpd start
 ```
 
-### Gitをインストール
+#### Gitをインストール
 ```shell
 sudo yum update
 ```
@@ -37,19 +41,19 @@ sudo yum update
 sudo yum install git
 ```
 
-### アプリをインストール
+#### アプリをインストール
 ```shell
 cd /var/www/html/sudo git clone https://github.com/CloudTechOrg/book-publish-web-application.git
 ```
 
-### Webアプリを起動
+#### Webアプリを起動
 ```
 http://<パブリックIPアドレス>/book-publish-web-application/timer.php
 ```
 
 <パブリックIPアドレス>の部分は、作成したEC2インスタンスのパブリックIPアドレスに置き換えてください。
 
-### 再起動時にWebサーバが自動起動するように設定する
+#### 再起動時にWebサーバが自動起動するように設定する
 ```shell
 sudo chkconfig httpd on
 ```
